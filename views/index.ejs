@@ -1,0 +1,47 @@
+<% include partials/header %>
+
+<div class = "container">
+   <div class="ui fixed inverted menu" >
+        <div class="ui container">
+          <div class="header item"><a href = "/">Blog Site</a></div>
+          <a href="/" class="item">HOME</a>
+          <a href="/blogs/new" class="item" >New Post</a>
+        </div>
+  </div>
+  
+<div class = "container" style = "margin-top:76px;" >
+    <header class = "jumbotron">
+       <div class = "container">
+          <h1>Welcome to Blogs</h1>
+             <p>view the hand-picked Blogs from all round the world</p>
+             <p>
+                <a class = "btn btn-primary btn-large"  href = "/blogs/new" >Add new Blogs</a>
+       </div>
+    </header>
+       <div class = "row text-center" style = "display:flex; flex-wrap: wrap;">
+           <% for(var i=0;i<blogs.length;i++){ %>
+              <div class = "col-md-3 col-sm-6">
+                 <div class = "thumbnail" style = "width:100%;">
+                     <div class = "caption">
+                         <h4> <%= blogs[i].title %> </h4>
+                     </div>
+                         <img src = " <%= blogs[i].image %> " style = "width:100%; height: 200px;" >
+                            <div class = "caption">
+                              <p><%= blogs[i].body.substring(0, 25) %>....</p>
+                              <a href = "/blogs/<%= blogs[i]._id %>" class = "btn btn-primary">More info</a>
+                            </div>
+                 </div>
+              </div>
+                <% } %>
+       </div>
+ </div>   
+</div>
+
+
+
+ <% include partials/footer %>
+
+
+
+
+ <!--style = "display:flex; flex-wrap: wrap;"-->
