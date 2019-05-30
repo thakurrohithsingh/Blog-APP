@@ -1,0 +1,48 @@
+<% include partials/header %>
+
+
+  <div class = "container">
+    <div class="container" style = "margin-top:78px; vertical-align:middle;">
+        <div class = "ui main text container segment" style = "align:center;" >
+            <div class = "ui huge header" >Edit <%= blogs.title %></div>
+                <form class = "ui form" action = "/blogs/<%=blogs._id%>?_method=PUT" method = "POST" >
+                     <div class = "field" >
+                         <label>Title</label>
+                         <input type = "text"  style = "height:40px; width:100%;" name = "title" value = "<%= blogs.title %>" required>
+                     </div>
+                     <div class = "field" >
+                         <label>Image</label>
+                         <input type = "text"  style = "height:40px; width:100%;" name = "image" value = "<%= blogs.image %>" required>
+                     </div>
+                     <div class = "field">
+                         <label>Blogs Description</label>
+                         <textarea  rows = "5" cols = "30" name = "description"  required><%= blogs.body %></textarea>
+                     </div>
+                     <a class = "ui red basic button"  href = "/blogs/<%= blogs._id %>" >Go Back!</a>
+                     <div class = "field" style = "display:inline;" >
+                         <button  class = "ui violet basic button" >submit</button>
+                     </div>
+                </form>
+            </div>   
+        </div>
+    </div>
+  </div>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include partials/footer %>

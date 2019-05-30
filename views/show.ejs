@@ -1,0 +1,30 @@
+<% include partials/header %>
+
+<div class = "ui main text container segment" style = "margin-top:7.0em;" >
+    <div class = "ui huge header" style = "text-align:center; "><%= blogs.title %></div>
+        <div class = "ui top attached">
+            <div class = "item">
+                <div class = "thumbnail" style = "width:100%; border-style: none;">
+                    <img src = "<%= blogs.image %>" style = "width:480px; height:300px;" >
+                </div>
+                      <!--<img class = "ui centered rounded image" src = "<%= blogs.image %>" >-->
+            </div>
+            <div class = "content">
+                <span style = "font-weight:bold;font-size:16px;"><%= blogs.created.toDateString() %></span>
+            </div>
+            <div class = "description">
+                <p style = "font-family:Avenir; font-size: 18px;"> <%= blogs.body %></p>
+            </div>
+            <br>
+                <a class = "ui violet basic button" href = "/blogs">Go Back!</a>
+                <a class = "ui orange basic button" href = "/blogs/<%= blogs._id %>/edit">Edit</a>
+            <form style = "display:inline;" action = "/blogs/<%= blogs._id %>?_method=DELETE" method = "POST">
+                 <button class = "ui red basic button">DELETE</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<% include partials/footer %>
